@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",
+    "useDefineForClassFields": true,
+    "module": "ES2015",
+    "lib": ["ES2015", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "isolatedModules": true,
+    "noEmit": true,
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", ],
+}
