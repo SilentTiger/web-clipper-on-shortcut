@@ -9,12 +9,12 @@
   "scripts": {
     "generateCode": "ts-node -T ./script/generateCode.ts",
     "generateVersion": "ts-node -T ./script/generateVersion.ts",
-    "build": "tsup src/index.ts --format iife"
+    "build": "tsup src/index.ts --format iife && mv dist/index.js website/index.js"
   },
   "devDependencies": {
     "@types/dompurify": "^3.0.2",
     "@types/node": "^20.1.1",
-    "@types/showdown": "^2.0.1",
+    "@types/turndown": "^5.0.1",
     "ts-node": "^10.9.1",
     "tsup": "^6.7.0",
     "typescript": "^5.0.4"
@@ -22,6 +22,6 @@
   "dependencies": {
     "@mozilla/readability": "0.4.4",
     "dompurify": "3.0.3",
-    "showdown": "2.1.0"
+    "turndown": "7.1.2"
   }
 }

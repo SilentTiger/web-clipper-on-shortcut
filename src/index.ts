@@ -3,7 +3,7 @@ import plugins from './plugin'
 import launchers from './launcher';
 
 function clip(target: string) {
-  const { Readability, isProbablyReaderable, showdown, dompurify, completion } = window;
+  const { Readability, isProbablyReaderable, turndown: TurndownService, dompurify, completion } = window;
   const clonedDocument: Document = document.cloneNode(true) as Document
   const url = new URL(location.href)
 
@@ -50,8 +50,10 @@ function clip(target: string) {
     content: dompurify.sanitize(afterReadableArticle.content)
   }
 
-  const converter = new showdown.Converter()
-  const markdownContent: string = converter.makeMarkdown(pureArticle.content)
+  const turndownService = new TurndownService({
+    headingStyle: 'atx',
+  })
+  const markdownContent: string = turndownService.turndown(pureArticle.content)
 
   const afterMarkdownContent: string = neededPlugin.reduce((markdown, plugin): string => {
     try {
