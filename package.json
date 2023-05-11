@@ -1,15 +1,15 @@
 {
-  "name": "web-clipper-for-obsidian-ios",
+  "name": "web-clipper-on-shortcut",
   "version": "1.0.0",
-  "description": "a web clipper for obsidian on ios",
+  "description": "a web clipper on Apple shortcut",
   "main": "dist/index.js",
-  "repository": "https://github.com/SilentTiger/web-clipper-for-obsidian-ios",
+  "repository": "https://github.com/SilentTiger/web-clipper-on-shortcut",
   "author": "SilentTiger <cia.fbi.007@hotmail.com>",
   "license": "MIT",
   "scripts": {
-    "generateCode": "ts-node -T ./script/generateCode.ts",
-    "generateVersion": "ts-node -T ./script/generateVersion.ts",
-    "build": "tsup src/index.ts --format iife && mv dist/index.js website/index.js"
+    "prebuild": "ts-node -T ./script/prebuild.ts",
+    "build": "tsup src/index.ts --format iife",
+    "postbuild": "ts-node -T ./script/postBuild.ts"
   },
   "devDependencies": {
     "@types/dompurify": "^3.0.2",

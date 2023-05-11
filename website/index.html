@@ -1,12 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Web Clipper on Shortcut</title>
+  <link rel="stylesheet" href="assets/typo.css">
 </head>
-<body>
-  
+
+<body class="typo">
+  <p><a href="./en.html">English Version</a></p>
+  <h1>Web Clipper on Shortcut</h1>
+  <p>
+    <i>Web Clipper on Shortcut</i> 是一个网页剪藏快捷指令，可以在 Safari 等浏览器上快速剪藏网页正文内容到一些 App。
+  </p>
+  <h2>
+    快速上手
+  </h2>
+  <p>
+  </p>
+  <h2>原理</h2>
+  <p>
+    <i>Web Clipper on Shortcut</i> 的工作过程大致分为 4 个步骤：
+  </p>
+  <ol>
+    <li>获取网页正文内容，排除网页框架、广告等不必要的内容。</li>
+    <li>过滤掉正文内容中不安全的部分，比如注入脚本等。</li>
+    <li>将正文内容由 html 格式转换为 Markdown 格式。</li>
+    <li>通过 URI Scheme 将 Markdown 内容传入指定的 App。</li>
+  </ol>
+  <p>上述步骤的具体逻辑都是通过 JavaScript 实现的，<i>Web Clipper on Shortcut</i> 快捷指令在运行时会将这些 JavaScript 代码从磁盘读取出来，并注入到网页中运行。</p>
+  <p>其中前三步分别用 <i>mozilla/readability</i>、<i>cure53/DOMPurify</i> 和 <i>mixmark-io/turndown</i> 这三个开源 JavaScript 库来实现。
+  </p>
+
+  <h2>
+    高级用法
+  </h2>
+
+  <h2>
+    致谢
+  </h2>
+  <p>
+    感谢下面这些项目为为 <i>Web Clipper on Shortcut</i> 提供的各种支持。
+  </p>
+  <dl>
+    <dt>
+      <cite><a target="mozilla/readability" href="https://github.com/mozilla/readability">mozilla/readability</a></cite>
+    </dt>
+    <dd>
+      <i>mozilla/readability</i> 被用于抽取网页正文内容，它也是 <i>Firefox Reader View</i> 的基础库。
+    </dd>
+  </dl>
+  <dl>
+    <dt>
+      <cite><a target="cure53/DOMPurify" href="https://github.com/cure53/DOMPurify">cure53/DOMPurify</a></cite>
+    </dt>
+    <dd>
+      <i>cure53/DOMPurify</i> 被用于过滤掉正文内容中不安全的部分。
+    </dd>
+  </dl>
+  <dl>
+    <dt>
+      <cite><a target="mixmark-io/turndown" href="https://github.com/mixmark-io/turndown">mixmark-io/turndown</a></cite>
+    </dt>
+    <dd>
+      <i>mixmark-io/turndown</i> 被用于将正文内容由 html 格式转换为 Markdown 格式。
+    </dd>
+  </dl>
+  <dl>
+    <dt>
+      <cite><a target="sofish/typo.css" href="https://github.com/sofish/typo.css">sofish/typo.css</a></cite>
+    </dt>
+    <dd>
+      <i>sofish/typo.css</i> 被用于本网页的内容排版和美化。
+    </dd>
+  </dl>
 </body>
+
 </html>
