@@ -2826,11 +2826,17 @@
   // src/launcher/obsidian.ts
   var obsidianLauncher = {
     name: "Obsidian",
-    launch: (article) => {
+    launch: (article, url, config) => {
       if (!article.markdownContent) {
-        return false;
+        return null;
       }
-      return true;
+      const vault = config.split("|")[0];
+      const name = config.split("|")[1];
+      if (vault && name) {
+        window.open(`obsidian://new?vault=${vault}&file=${name}/${article.title}`);
+        return article.markdownContent;
+      }
+      return null;
     }
   };
   var obsidian_default = obsidianLauncher;
@@ -3606,7 +3612,7 @@
 
   // src/index.ts
   var import_dompurify = __toESM(require_purify());
-  function clip(target) {
+  function clip(target, launcherConfig) {
     var _a;
     const clonedDocument = document.cloneNode(true);
     const url = new URL(location.href);
@@ -3630,7 +3636,7 @@
     }, clonedDocument);
     const readabilityArticle = new import_readability.Readability(beforeReadableDocument).parse();
     if (readabilityArticle === null) {
-      return false;
+      return null;
     }
     const afterReadableArticle = neededPlugin.reduce((article, plugin) => {
       var _a2, _b;
@@ -3665,10 +3671,9 @@
     const launcher = launcher_default.find((item) => item.name === target);
     if (!launcher) {
       alert("launcher not found");
-      return false;
+      return null;
     } else {
-      alert("launcher success obsidian");
-      return (_a = launcher.launch(finalArticle, url)) != null ? _a : false;
+      return (_a = launcher.launch(finalArticle, url, launcherConfig)) != null ? _a : null;
     }
   }
   window.wcosClip = clip;
