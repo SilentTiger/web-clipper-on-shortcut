@@ -3608,7 +3608,6 @@
   var import_dompurify = __toESM(require_purify());
   function clip(target) {
     var _a;
-    const { completion } = window;
     const clonedDocument = document.cloneNode(true);
     const url = new URL(location.href);
     const neededPlugin = plugin_default.filter((plugin) => {
@@ -3630,12 +3629,11 @@
       return doc;
     }, clonedDocument);
     if (!(0, import_readability.isProbablyReaderable)(beforeReadableDocument)) {
-      completion(false);
-      return;
+      return false;
     }
     const readabilityArticle = new import_readability.Readability(beforeReadableDocument).parse();
     if (readabilityArticle === null) {
-      return;
+      return false;
     }
     const afterReadableArticle = neededPlugin.reduce((article, plugin) => {
       var _a2, _b;
@@ -3669,11 +3667,11 @@
     });
     const launcher = launcher_default.find((item) => item.name === target);
     if (!launcher) {
-      completion(false);
       alert("launcher not found");
+      return false;
     } else {
-      completion((_a = launcher.launch(finalArticle, url)) != null ? _a : false);
       alert("launcher success obsidian");
+      return (_a = launcher.launch(finalArticle, url)) != null ? _a : false;
     }
   }
   window.wcosClip = clip;
