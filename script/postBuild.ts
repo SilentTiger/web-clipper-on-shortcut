@@ -1,15 +1,12 @@
-const { writeFileSync, renameSync } = require('fs');
-const { version, dependencies } = require('../package.json');
+const { readFileSync, writeFileSync, renameSync } = require('fs');
+const { createHash } = require('crypto');
 
-const mainVersion = version;
-const readabilityVersion = dependencies['@mozilla/readability']
-const dompurifyVersion = dependencies['dompurify']
-const turndownVersion = dependencies['turndown']
-
-const versionFileContent = `https://cdn.jsdelivr.net/npm/@mozilla/readability@${readabilityVersion}/Readability.js
-https://cdn.jsdelivr.net/npm/dompurify@${dompurifyVersion}/dist/purify.min.js
-https://cdn.jsdelivr.net/npm/turndown@${turndownVersion}/dist/turndown.js
-https://silenttiger.online/web-clipper-on-shortcut/index-${mainVersion}.js`
-console.log('versionFileContent', versionFileContent)
-writeFileSync('./website/version.txt', versionFileContent)
-renameSync('./dist/index.js', `./website/index-${mainVersion}.js`)
+function hashFile(): string {
+  const fileDataBuffer = readFileSync('./dist/index.js');
+  const hashSum = createHash('md5');
+  hashSum.update(fileDataBuffer);
+  return hashSum.digest('hex');
+}
+const fileHash = hashFile();
+renameSync('./dist/index.js', `./website/${fileHash}.js`);
+writeFileSync('./website/version.txt', fileHash);

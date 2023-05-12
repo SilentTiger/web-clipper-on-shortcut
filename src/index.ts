@@ -1,9 +1,12 @@
 import type { IReadabilityArticle } from './common'
 import plugins from './plugin'
 import launchers from './launcher';
+import { Readability, isProbablyReaderable } from '@mozilla/readability';
+import TurndownService from 'turndown';
+import dompurify from 'dompurify';
 
 function clip(target: string) {
-  const { Readability, isProbablyReaderable, turndown: TurndownService, dompurify, completion } = window;
+  const { completion } = window;
   const clonedDocument: Document = document.cloneNode(true) as Document
   const url = new URL(location.href)
 
@@ -72,7 +75,13 @@ function clip(target: string) {
     markdownContent: afterMarkdownContent
   }
 
-  const result = launchers.find(item => item.name === target)?.launch(finalArticle, url) ?? false
-  completion(result);
+  const launcher = launchers.find(item => item.name === target)
+  if (!launcher) {
+    completion(false);
+    alert('launcher not found');
+  } else {
+    completion(launcher.launch(finalArticle, url) ?? false);
+    alert('launcher success obsidian');
+  }
 }
-window.wcfiClip = clip
+window.wcosClip = clip
