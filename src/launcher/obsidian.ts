@@ -14,7 +14,7 @@ const obsidianLauncher: ILauncher<ObsidianLaunchConfig> = {
     const name = config.split("|")[1]
     if (vault && name) {
       return [
-        `obsidian://new?vault=${vault}&file=${name}/${article.title}`,
+        encodeURI(`obsidian://new?vault=${vault}&file=${name}/${article.title}`),
         article.markdownContent
       ]
     }

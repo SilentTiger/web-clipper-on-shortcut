@@ -4,7 +4,7 @@ export default defineConfig({
   entry: ["src/index.ts"],
   clean: true,
   platform: "browser",
-  minify: false,
+  minify: true,
   outExtension() {
     return {
       js: `.js`,
