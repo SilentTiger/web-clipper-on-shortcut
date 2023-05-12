@@ -1813,7 +1813,7 @@
       function isNodeVisible(node) {
         return (!node.style || node.style.display != "none") && !node.hasAttribute("hidden") && (!node.hasAttribute("aria-hidden") || node.getAttribute("aria-hidden") != "true" || node.className && node.className.indexOf && node.className.indexOf("fallback-image") !== -1);
       }
-      function isProbablyReaderable2(doc, options = {}) {
+      function isProbablyReaderable(doc, options = {}) {
         if (typeof options == "function") {
           options = { visibilityChecker: options };
         }
@@ -1852,7 +1852,7 @@
         });
       }
       if (typeof module === "object") {
-        module.exports = isProbablyReaderable2;
+        module.exports = isProbablyReaderable;
       }
     }
   });
@@ -1861,10 +1861,10 @@
   var require_readability = __commonJS({
     "node_modules/@mozilla/readability/index.js"(exports, module) {
       var Readability2 = require_Readability();
-      var isProbablyReaderable2 = require_Readability_readerable();
+      var isProbablyReaderable = require_Readability_readerable();
       module.exports = {
         Readability: Readability2,
-        isProbablyReaderable: isProbablyReaderable2
+        isProbablyReaderable
       };
     }
   });
@@ -3628,9 +3628,6 @@
       }
       return doc;
     }, clonedDocument);
-    if (!(0, import_readability.isProbablyReaderable)(beforeReadableDocument)) {
-      return false;
-    }
     const readabilityArticle = new import_readability.Readability(beforeReadableDocument).parse();
     if (readabilityArticle === null) {
       return false;
