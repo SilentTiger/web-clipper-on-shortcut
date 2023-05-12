@@ -31,6 +31,7 @@ function clip(target: string) {
 
   if (!isProbablyReaderable(beforeReadableDocument)) {
     completion(false);
+    return;
   }
 
   const readabilityArticle: IReadabilityArticle | null = new Readability(beforeReadableDocument).parse()
