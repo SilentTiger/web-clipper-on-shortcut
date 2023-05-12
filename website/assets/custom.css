@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+dd {
+  margin-left: 2em;
+}
+
+/* 让链接在 hover 状态下显示下划线 */
+a {
+  background: linear-gradient(90deg, rgba(243,89,202,1) 0%, rgba(245,83,76,1) 33%, rgba(50,192,153,1) 67%, rgba(19,117,253,1) 100%);;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.typo a {
+  border-bottom: none;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 200;
+}
+
+nav {
+  width: 100%;
+  max-width: 800px;
+}
+
+article {
+  padding: 10px;
+  max-width: 800px;
+}
+
+.center {
+  text-align: center;
+}
