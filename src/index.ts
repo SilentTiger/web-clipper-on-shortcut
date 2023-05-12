@@ -1,7 +1,7 @@
 import type { IReadabilityArticle } from './common'
 import plugins from './plugin'
 import launchers from './launcher';
-import { Readability, isProbablyReaderable } from '@mozilla/readability';
+import { Readability } from '@mozilla/readability';
 import TurndownService from 'turndown';
 import dompurify from 'dompurify';
 
@@ -27,10 +27,6 @@ function clip(target: string): boolean {
     }
     return doc
   }, clonedDocument);
-
-  if (!isProbablyReaderable(beforeReadableDocument)) {
-    return false;
-  }
 
   const readabilityArticle: IReadabilityArticle | null = new Readability(beforeReadableDocument).parse()
 
