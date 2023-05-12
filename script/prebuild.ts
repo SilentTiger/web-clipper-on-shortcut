@@ -37,7 +37,7 @@ async function generateLauncherIndexCode() {
 import { ILauncher } from '../common';
 ${launcherNames.map(name => `import ${name}Launcher from './${name}';`).join('\n')}
 
-const launchers: ILauncher[] = [${launcherNames.map(name => `${name}Launcher`).join(', ')}];
+const launchers: ILauncher<string>[] = [${launcherNames.map(name => `${name}Launcher as ILauncher<string>`).join(', ')}];
 
 export default launchers;
 `

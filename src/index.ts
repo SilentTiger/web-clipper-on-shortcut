@@ -5,7 +5,7 @@ import { Readability } from '@mozilla/readability';
 import TurndownService from 'turndown';
 import dompurify from 'dompurify';
 
-function clip(target: string, launcherConfig: string): string | null {
+function clip(target: string, launcherConfig: string): [string, string] | null {
   const clonedDocument: Document = document.cloneNode(true) as Document
   const url = new URL(location.href)
 

@@ -8,6 +8,6 @@
 import { ILauncher } from '../common';
 import obsidianLauncher from './obsidian';
 
-const launchers: ILauncher[] = [obsidianLauncher];
+const launchers: ILauncher<string>[] = [obsidianLauncher as ILauncher<string>];
 
 export default launchers;

@@ -40,5 +40,5 @@ export interface IPlugin {
 
 export interface ILauncher<T extends string> {
   name: string;
-  launch: (article: IReadabilityArticle, url: URL, config: T) => string | null;
+  launch: (article: IReadabilityArticle, url: URL, config: T) => [string, string] | null;
 }
