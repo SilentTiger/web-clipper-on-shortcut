@@ -22,14 +22,6 @@ body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset,
   padding: 0;
 }
 
-body {
-  padding: 10px;
-}
-
-dd {
-  margin-left: 2em;
-}
-
 /* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
 article, aside, details, figcaption, figure, footer, header, menu, nav, section {
   display: block;
@@ -135,16 +127,16 @@ sub {
 
 /* 让链接在 hover 状态下显示下划线 */
 a {
-  background: linear-gradient(90deg, rgba(243,89,202,1) 0%, rgba(245,83,76,1) 33%, rgba(50,192,153,1) 67%, rgba(19,117,253,1) 100%);;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #1abc9c;
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-
+.typo a {
+  border-bottom: 1px solid #1abc9c;
+}
 
 .typo a:hover {
   border-bottom-color: #555;
@@ -250,7 +242,7 @@ strong, b {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
-  font-weight: 200;
+  font-weight: 100;
   color: #000;
   line-height: 1.35;
 }
