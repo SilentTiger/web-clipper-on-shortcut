@@ -5,8 +5,7 @@ import { Readability, isProbablyReaderable } from '@mozilla/readability';
 import TurndownService from 'turndown';
 import dompurify from 'dompurify';
 
-function clip(target: string) {
-  const { completion } = window;
+function clip(target: string): boolean {
   const clonedDocument: Document = document.cloneNode(true) as Document
   const url = new URL(location.href)
 
@@ -30,14 +29,13 @@ function clip(target: string) {
   }, clonedDocument);
 
   if (!isProbablyReaderable(beforeReadableDocument)) {
-    completion(false);
-    return;
+    return false;
   }
 
   const readabilityArticle: IReadabilityArticle | null = new Readability(beforeReadableDocument).parse()
 
   if (readabilityArticle === null) {
-    return
+    return false;
   }
 
   const afterReadableArticle: IReadabilityArticle = neededPlugin.reduce((article, plugin): IReadabilityArticle => {
@@ -78,11 +76,11 @@ function clip(target: string) {
 
   const launcher = launchers.find(item => item.name === target)
   if (!launcher) {
-    completion(false);
     alert('launcher not found');
+    return false
   } else {
-    completion(launcher.launch(finalArticle, url) ?? false);
     alert('launcher success obsidian');
+    return (launcher.launch(finalArticle, url) ?? false);
   }
 }
 window.wcosClip = clip
