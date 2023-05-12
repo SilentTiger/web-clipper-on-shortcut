@@ -38,7 +38,7 @@ export interface IPlugin {
   afterMarkdown?: (markdown: string, article: IReadabilityArticle, doc: Document, url: URL) => string;
 }
 
-export interface ILauncher {
+export interface ILauncher<T extends string> {
   name: string;
-  launch: (article: IReadabilityArticle, url: URL) => boolean;
+  launch: (article: IReadabilityArticle, url: URL, config: T) => string | null;
 }

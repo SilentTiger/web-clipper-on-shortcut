@@ -5,7 +5,7 @@ import { Readability } from '@mozilla/readability';
 import TurndownService from 'turndown';
 import dompurify from 'dompurify';
 
-function clip(target: string): boolean {
+function clip(target: string, launcherConfig: string): string | null {
   const clonedDocument: Document = document.cloneNode(true) as Document
   const url = new URL(location.href)
 
@@ -31,7 +31,7 @@ function clip(target: string): boolean {
   const readabilityArticle: IReadabilityArticle | null = new Readability(beforeReadableDocument).parse()
 
   if (readabilityArticle === null) {
-    return false;
+    return null;
   }
 
   const afterReadableArticle: IReadabilityArticle = neededPlugin.reduce((article, plugin): IReadabilityArticle => {
@@ -73,10 +73,9 @@ function clip(target: string): boolean {
   const launcher = launchers.find(item => item.name === target)
   if (!launcher) {
     alert('launcher not found');
-    return false
+    return null
   } else {
-    alert('launcher success obsidian');
-    return (launcher.launch(finalArticle, url) ?? false);
+    return (launcher.launch(finalArticle, url, launcherConfig) ?? null);
   }
 }
 window.wcosClip = clip

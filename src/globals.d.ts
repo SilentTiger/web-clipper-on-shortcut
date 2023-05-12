@@ -1,5 +1,5 @@
 export declare global {
   interface Window {
-    wcosClip: (target: string) => void,
+    wcosClip: (target: string, launcherConfig: string) => string | null,
   }
 }

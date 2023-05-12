@@ -1,12 +1,22 @@
 import { ILauncher } from "../common";
 
-const obsidianLauncher: ILauncher = {
+type Vault = string
+type Name = string
+type ObsidianLaunchConfig = `${Vault}|${Name}`
+
+const obsidianLauncher: ILauncher<ObsidianLaunchConfig> = {
   name: "Obsidian",
-  launch: (article): boolean => {
+  launch: (article, url, config: ObsidianLaunchConfig): string | null => {
     if (!article.markdownContent) {
-      return false
+      return null
     }
-    return true
+    const vault = config.split("|")[0]
+    const name = config.split("|")[1]
+    if (vault && name) {
+      window.open(`obsidian://new?vault=${vault}&file=${name}/${article.title}`)
+      return article.markdownContent
+    }
+    return null
   }
 }
 
