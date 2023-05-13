@@ -10,13 +10,6 @@ dd {
   margin-left: 2em;
 }
 
-/* 让链接在 hover 状态下显示下划线 */
-a {
-  background: linear-gradient(90deg, rgba(243,89,202,1) 0%, rgba(245,83,76,1) 33%, rgba(50,192,153,1) 67%, rgba(19,117,253,1) 100%);;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .typo a {
   border-bottom: none;
 }
@@ -25,15 +18,56 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 nav {
+  box-sizing: border-box;
   width: 100%;
   max-width: 800px;
+  padding: 5px 10px 0 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 article {
-  padding: 10px;
+  box-sizing: border-box;
+  padding: 0 10px 10px;
   max-width: 800px;
 }
 
 .center {
   text-align: center;
+}
+
+.text-link {
+  background: linear-gradient(90deg, rgba(243,89,202,1) 0%, rgba(245,83,76,1) 33%, rgba(50,192,153,1) 67%, rgba(19,117,253,1) 100%);;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.icon-github{
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(github-mark.png);
+}
+
+
+@media screen and (prefers-color-scheme: dark) {
+  html {
+    background-color: #010409;
+    color: #e6edf3;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: #fff;
+  }
+  .icon-github{
+    background-image: url(github-mark-white.png);
+  }
+  .darken-in-dark {
+    filter: brightness(90%);
+  }
 }
