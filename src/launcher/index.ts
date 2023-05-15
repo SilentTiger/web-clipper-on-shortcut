@@ -7,8 +7,9 @@
 
 import { ILauncher } from '../common';
 import bearLauncher from './bear';
+import craftLauncher from './craft';
 import obsidianLauncher from './obsidian';
 
-const launchers: ILauncher<string>[] = [bearLauncher as ILauncher<string>, obsidianLauncher as ILauncher<string>];
+const launchers: ILauncher<string>[] = [bearLauncher as ILauncher<string>, craftLauncher as ILauncher<string>, obsidianLauncher as ILauncher<string>];
 
 export default launchers;
