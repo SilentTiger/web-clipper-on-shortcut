@@ -14,7 +14,7 @@ const bearLauncher: ILauncher<BearLaunchConfig> = {
     const name = config.split("|")[1]
     if (vault && name) {
       return [
-        encodeURI(`bear://new?title=${article.title}&clipboard=yes&filename=${article.title}&timestamp=yes`),
+        encodeURI(`bear://x-callback-url/create?title=${article.title}&open_note=yes&clipboard=yes&timestamp=yes`),
         article.markdownContent
       ]
     }
