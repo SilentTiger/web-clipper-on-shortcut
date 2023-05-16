@@ -9,8 +9,8 @@ const bearLauncher: ILauncher<BearLaunchConfig> = {
       return null
     }
     return [
-      encodeURI(`bear://x-callback-url/create?title=${article.title}&open_note=yes&clipboard=yes&timestamp=yes`),
-      article.markdownContent
+      encodeURI(`bear://x-callback-url/create?title=${article.title}&clipboard=yes&type=html&url=${url.toString()}`),
+      article.content
     ]
   }
 }
