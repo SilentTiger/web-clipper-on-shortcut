@@ -34,6 +34,32 @@ article {
   max-width: 800px;
 }
 
+video::-webkit-media-controls-volume-slider {
+  display:none;
+}
+
+video::-webkit-media-controls-mute-button {
+  display:none;
+}
+
+aside {
+  position: fixed;
+  top: 200px;
+  left: calc(50% - 400px - 120px);
+}
+
+aside ol {
+  list-style: none;
+}
+
+aside ol li {
+  margin-bottom: 5px;
+}
+
+aside ol li a {
+  display: block;
+}
+
 .center {
   text-align: center;
 }
@@ -45,7 +71,7 @@ article {
   -webkit-text-fill-color: transparent;
 }
 
-.icon-github{
+.icon-github {
   display: inline-block;
   width: 28px;
   height: 28px;
@@ -55,6 +81,29 @@ article {
   background-image: url(github-mark.png);
 }
 
+.clip-samples-mobile {
+  text-align: center;
+}
+
+figure{
+  margin-bottom: 30px;
+}
+
+.clip-samples-mobile video{
+  width: 250px;
+}
+
+@media (min-width: 800px) {
+  .clip-samples-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.clip-samples-mac video {
+  max-width: 100%;
+}
 
 @media screen and (prefers-color-scheme: dark) {
   html {
