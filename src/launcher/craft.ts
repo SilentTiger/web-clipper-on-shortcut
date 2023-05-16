@@ -14,7 +14,7 @@ const craftLauncher: ILauncher<CraftLaunchConfig> = {
     const folderId = config.split("|")[1]
     if (spaceId) {
       return [
-        encodeURI(`craftdocs://createdocument?spaceId=${spaceId}&title=${article.title}&folderId=${folderId ?? ''}`),
+        encodeURI(`craftdocs://createdocument?spaceId=${spaceId}&title=${article.title}&folderId=${folderId ?? ''}&content=${article.markdownContent}`),
         article.markdownContent
       ]
     }
