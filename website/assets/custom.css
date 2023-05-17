@@ -1,7 +1,7 @@
 @charset "utf-8";
 
-html{
-  scroll-behavior:smooth
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -20,12 +20,17 @@ dd {
   color: #333;
   cursor: pointer;
 }
-@media (hover: hover), (-ms-high-contrast:none) {
+@media (hover: hover), (-ms-high-contrast: none) {
   .typo a:hover {
     color: #000;
   }
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 200;
 }
 
@@ -47,17 +52,17 @@ article {
 }
 
 video::-webkit-media-controls-volume-slider {
-  display:none;
+  display: none;
 }
 
 video::-webkit-media-controls-mute-button {
-  display:none;
+  display: none;
 }
 
 aside {
   position: fixed;
-  top: 140px;
   left: calc(50% + 400px + 30px);
+  bottom: 80px;
 }
 
 .typo aside ol {
@@ -71,10 +76,10 @@ aside ol li {
 
 aside ol li a {
   display: block;
-  transition: color .15s linear, transform .15s linear;
+  transition: color 0.15s linear, transform 0.15s linear;
   line-height: 22px;
 }
-@media (hover: hover), (-ms-high-contrast:none) {
+@media (hover: hover), (-ms-high-contrast: none) {
   aside ol li a:hover {
     transform: scale(1.05);
   }
@@ -85,7 +90,13 @@ aside ol li a {
 }
 
 .text-link {
-  background: linear-gradient(90deg, rgba(243,89,202,1) 0%, rgba(245,83,76,1) 33%, rgba(50,192,153,1) 67%, rgba(19,117,253,1) 100%);;
+  background: linear-gradient(
+    90deg,
+    rgba(243, 89, 202, 1) 0%,
+    rgba(245, 83, 76, 1) 33%,
+    rgba(50, 192, 153, 1) 67%,
+    rgba(19, 117, 253, 1) 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -105,11 +116,11 @@ aside ol li a {
   text-align: center;
 }
 
-figure{
+figure {
   margin-bottom: 30px;
 }
 
-.clip-samples-mobile video{
+.clip-samples-mobile video {
   width: 250px;
 }
 
@@ -131,8 +142,9 @@ figure{
     right: 20px;
     padding: 20px;
     border-radius: 10px;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, .4);
+    background-color: rgba(255, 255, 255, 0.4);
   }
 }
 
@@ -141,21 +153,32 @@ figure{
     background-color: #010409;
     color: #e6edf3;
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: #fff;
   }
   .typo a {
     color: #e6edf3;
   }
-  @media (hover: hover), (-ms-high-contrast:none) {
+  @media (hover: hover), (-ms-high-contrast: none) {
     .typo a:hover {
       color: #fff;
     }
   }
-  .icon-github{
+  .icon-github {
     background-image: url(github-mark-white.png);
   }
   .darken-in-dark {
     filter: brightness(90%);
+  }
+
+  @media (max-width: 1100px) {
+    aside {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
   }
 }

@@ -91,11 +91,45 @@
     <h2 id="header-security">
       安全与隐私
     </h2>
-
+    <p>
+      如前所述，<i>Web Clipper on Shortcut</i> 在运行时会将一段 JavaScript 脚本注入网页中执行，这意味着网页的内容可以被这段 JavaScript
+      脚本完整访问。如果你剪藏的网页中正好存在某些敏感信息，而被注入的 JavaScript 脚本中又包含了某些恶意代码，那么这些敏感信息就会有被泄露的风险。事实上，所有的剪藏工具都会存在类似的风险。
+    </p>
+    <p>
+      为了避免出现这种问题，打消大家使用 <i>Web Clipper on Shortcut</i> 时对数据安全的疑虑，<i>Web Clipper on Shortcut</i> 的源代码是完全公开透明的，你可以在 <a
+        class="text-link" href="https://github.com/SilentTiger/web-clipper-on-shortcut"
+        target="_blank">SilentTiger/web-clipper-on-shortcut</a> 查看 <i>Web Clipper on Shortcut</i>
+      的所有源码，你也完全可以下载源码然后自行编译使用。
+    </p>
+    <p>
+      同时，<i>Web Clipper on Shortcut</i> 在将 JavaScript 脚本注入网页前会先通过 MD5 算法检查这段 JavaScript
+      脚本是否被篡改过，以避免数据安全风险。验证的判据就保存在快捷指令的源文件中，所以不要轻易相信他人发给你的 <i>Web Clipper on Shortcut</i> 快捷指令文件，因为他可能会修改其中的 MD5
+      判据，从而引入存在安全风险的 JavaScript 脚本。
+    </p>
+    <p>
+      <i>Web Clipper on Shortcut</i> 在运行过程本身是不依赖网络的，也不会发送任何数据到第三方服务器。
+    </p>
     <h2 id="header-feedback">
       反馈与建议
     </h2>
-
+    <p>
+      如果你在使用 <i>Web Clipper on Shortcut</i> 时遇到任何问题，你可以在 <a class="text-link"
+        href="https://github.com/SilentTiger/web-clipper-on-shortcut"
+        target="_blank">SilentTiger/web-clipper-on-shortcut</a>
+      上提出反馈。
+    </p>
+    <p>
+      <i>Web Clipper on Shortcut</i> 目前支持的 App 还比较少，如果你希望 <i>Web Clipper on Shortcut</i> 能支持其他 App，并且你希望支持的 App 可以通过 URL
+      Scheme 唤起，那么你也可以在前面那个链接处提一个 issue，我有空了会尽快处理。
+    </p>
+    <p>
+      当然，如果你恰好还懂一点点 JavaScript，那你完全可以给你希望支持的 App 写一个 launcher，然后给 <i>Web Clipper on Shortcut</i> 提交 Pull
+      Request。launcher 的具体实现可以参考项目中 src/launcher 目录下的写法。
+    </p>
+    <p>
+      另外，<i>Web Clipper on Shortcut</i> 目前也只针对个别网站做了优化，如果你发现它在剪藏某些网站时效果不理想，比如广告没有去除干净，你也可以提 issue，当然如果你能针对性的实现一个 plugin
+      然后提 pull request 就更好啦，plugin 的实现可以参考项目中 src/plugin 目录下的写法。
+    </p>
     <h2 id="header-acknowledgments">
       致谢
     </h2>
