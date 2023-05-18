@@ -49,6 +49,9 @@
     <h2 id="header-tutorials">
       快速上手
     </h2>
+    <h4>
+      安装
+    </h4>
     <p class="center">
       <a href="assets/Web Clipper on Shortcut.shortcut">
         <img class="darken-in-dark" src="assets/main-icon.png" width="150" alt="Web Clipper on Shortcut icon">
@@ -69,6 +72,9 @@
         <figcaption class="center">初始化</figcaption>
       </figure>
     </div>
+    <h4>
+      配置
+    </h4>
     <p>
       紧接着，<i>Web Clipper on Shortcut</i> 会根据你选择的 App 开始针对性的设置引导。这里先以 Obsidian 为例，<i>Web Clipper on Shortcut</i>
       会询问你希望将剪藏内容保存到哪个 Vault 和 Vault 下的具体路径。这里假设 Vault 是「Personal」而路径是「SimpleRead」，那么当我剪藏一篇标题叫做「hello
@@ -80,6 +86,9 @@
         <figcaption class="center">初始化 Obsidian 相关配置</figcaption>
       </figure>
     </div>
+    <h4>
+      权限
+    </h4>
     <p>
       最后，<i>Web Clipper on Shortcut</i> 会尝试通过本网站下载一个用于剪藏的 JavaScript 脚本，并申请将数据写入剪贴板的权限，这里全部允许即可。关于 JavaScript
       脚本以及剪贴板权限的详细信息可以参考后面的章节。
@@ -90,16 +99,9 @@
         <figcaption class="center">初始化 Obsidian 相关配置</figcaption>
       </figure>
     </div>
-    <p>
-      <i>Web Clipper on Shortcut</i> 刚安装好的时候默认是在 Safari 浏览器分享面板的最下面的，为了让我们使用 <i>Web Clipper on Shortcut</i>
-      更方便，我们还可以调整它在分享面板中的位置。
-    </p>
-    <div class="video-section-1 center">
-      <figure>
-        <video controls preload="metadata" src="assets/video/order.mp4#t=0.001"></video>
-        <figcaption class="center">调整 <i>Web Clipper on Shortcut</i> 在分享面板中的位置</figcaption>
-      </figure>
-    </div>
+    <h4>
+      使用
+    </h4>
     <p>
       到这里，<i>Web Clipper on Shortcut</i> 就已经初始化完成了，让我们赶紧看看如果剪藏一个网页。
     </p>
@@ -121,9 +123,23 @@
         <figcaption class="center">粘贴剪藏内容到 Obsidian</figcaption>
       </figure>
     </div>
+    <h4>
+      优化
+    </h4>
+    <p>
+      <i>Web Clipper on Shortcut</i> 刚安装好的时候默认是在 Safari 浏览器分享面板的最下面的，为了让我们使用 <i>Web Clipper on Shortcut</i>
+      更方便，我们还可以调整它在分享面板中的位置。
+    </p>
+    <div class="video-section-1 center">
+      <figure>
+        <video controls preload="metadata" src="assets/video/order.mp4#t=0.001"></video>
+        <figcaption class="center">调整 <i>Web Clipper on Shortcut</i> 在分享面板中的位置</figcaption>
+      </figure>
+    </div>
 
-
-
+    <h2 id="header-advance">
+      更多用法
+    </h2>
 
     <h2 id="header-how">原理</h2>
     <p>
@@ -139,10 +155,6 @@
     <p>上述步骤的具体逻辑大多是通过 JavaScript 实现的，<i>Web Clipper on Shortcut</i> 快捷指令在运行时会将这些 JavaScript 代码从磁盘读取出来，并注入到网页中运行。</p>
     <p>其中前三步分别用 <i>mozilla/readability</i>、<i>cure53/DOMPurify</i> 和 <i>mixmark-io/turndown</i> 这三个开源 JavaScript 库来实现。
     </p>
-
-    <h2 id="header-advance">
-      高级用法
-    </h2>
 
     <h2 id="header-security">
       安全与隐私
@@ -234,8 +246,8 @@
       <li><a href="#header-desc">概要</a></li>
       <li><a href="#header-demo">效果展示</a></li>
       <li><a href="#header-tutorials">快速上手</a></li>
+      <li><a href="#header-advance">更多用法</a></li>
       <li><a href="#header-how">原理</a></li>
-      <li><a href="#header-advance">高级用法</a></li>
       <li><a href="#header-security">安全与隐私</a></li>
       <li><a href="#header-feedback">反馈与建议</a></li>
       <li><a href="#header-acknowledgments">致谢</a></li>
