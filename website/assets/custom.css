@@ -2,6 +2,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow: overlay;
 }
 
 body {
@@ -60,9 +61,49 @@ video::-webkit-media-controls-mute-button {
 }
 
 aside {
+  width: 130px;
+  box-sizing: border-box;
   position: fixed;
   left: calc(50% + 400px + 30px);
-  bottom: 80px;
+  bottom: 90px;
+  padding: 20px;
+  border-radius: 10px;
+  transition: opacity 0.3s linear;
+}
+
+.scrolling aside {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (max-width: 1160px) {
+  aside {
+    left: unset;
+    right: 20px;
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .stopping aside {
+    opacity: 0;
+    pointer-events: auto;
+  }
+  @media (hover: hover), (-ms-high-contrast: none) {
+    aside:hover {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  @media (max-width: 1160px) {
+    aside {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+  }
 }
 
 .typo aside ol {
@@ -136,18 +177,6 @@ figure {
   max-width: 100%;
 }
 
-@media (max-width: 1100px) {
-  aside {
-    left: unset;
-    right: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.4);
-  }
-}
-
 @media screen and (prefers-color-scheme: dark) {
   html {
     background-color: #010409;
@@ -174,11 +203,5 @@ figure {
   }
   .darken-in-dark {
     filter: brightness(90%);
-  }
-
-  @media (max-width: 1100px) {
-    aside {
-      background-color: rgba(0, 0, 0, 0.3);
-    }
   }
 }
