@@ -69,17 +69,10 @@ aside {
   padding: 20px;
   border-radius: 10px;
   transition: opacity 0.3s linear;
-  opacity: 0;
-  pointer-events: none;
 }
 
 .scrolling aside {
   opacity: 1;
-  pointer-events: auto;
-}
-
-.stopping aside {
-  opacity: 0;
   pointer-events: auto;
 }
 
@@ -91,6 +84,11 @@ aside {
     background-color: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(10px);
     opacity: 0;
+    pointer-events: none;
+  }
+  .stopping aside {
+    opacity: 0;
+    pointer-events: auto;
   }
   @media (hover: hover), (-ms-high-contrast: none) {
     aside:hover {
