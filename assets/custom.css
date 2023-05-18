@@ -153,22 +153,34 @@ aside ol li a {
   background-image: url(github-mark.png);
 }
 
-.clip-samples-mobile {
-  text-align: center;
-}
-
 figure {
   margin-bottom: 30px;
 }
 
-.clip-samples-mobile video {
+.video-section-3 video {
+  width: 250px;
+}
+
+.video-section-2 video {
+  width: 250px;
+}
+
+.video-section-1 video {
   width: 250px;
 }
 
 @media (min-width: 800px) {
-  .clip-samples-mobile {
+  .video-section-3 {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 550px) {
+  .video-section-2 {
+    display: flex;
+    justify-content: space-around;
     align-items: flex-start;
   }
 }
