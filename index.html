@@ -26,15 +26,15 @@
     <p><i>Web Clipper on Shortcut</i> 目前支持剪藏网页内容到 Obsidian、Bear 和 Craft 三款 App：</p>
     <div class="video-section-3 center">
       <figure>
-        <video controls preload="metadata" src="assets/video/clip-to-obsidian.mp4#t=0.001"></video>
+        <video controls muted preload="metadata" src="assets/video/clip-to-obsidian.mp4#t=0.001"></video>
         <figcaption class="center">剪藏到 Obsidian</figcaption>
       </figure>
       <figure>
-        <video controls preload="metadata" src="assets/video/clip-to-bear.mp4#t=0.001"></video>
+        <video controls muted preload="metadata" src="assets/video/clip-to-bear.mp4#t=0.001"></video>
         <figcaption class="center">剪藏到 Bear</figcaption>
       </figure>
       <figure>
-        <video controls preload="metadata" src="assets/video/clip-to-craft.mp4#t=0.001"></video>
+        <video controls muted preload="metadata" src="assets/video/clip-to-craft.mp4#t=0.001"></video>
         <figcaption class="center">剪藏到 Craft</figcaption>
       </figure>
     </div>
@@ -42,7 +42,7 @@
       <i>Web Clipper on Shortcut</i> 不仅可以在 iOS 上使用，还能在 macOS 上使用。
     </p>
     <div class="clip-samples-mac center">
-      <video controls preload="metadata" src="assets/video/clip-to-bear-mac.mp4#t=0.001"></video>
+      <video controls muted preload="metadata" src="assets/video/clip-to-bear-mac.mp4#t=0.001"></video>
       <figcaption class="center">剪藏到 Bear mac 端</figcaption>
     </div>
 
@@ -64,11 +64,11 @@
     </p>
     <div class="video-section-2 center">
       <figure>
-        <video controls preload="metadata" src="assets/video/download.mp4"></video>
+        <video controls muted preload="metadata" src="assets/video/download.mp4"></video>
         <figcaption class="center">下载并导入到 <i>快捷指令</i> App</figcaption>
       </figure>
       <figure>
-        <video controls preload="metadata" src="assets/video/init.mp4#t=0.001"></video>
+        <video controls muted preload="metadata" src="assets/video/init.mp4#t=0.001"></video>
         <figcaption class="center">初始化</figcaption>
       </figure>
     </div>
@@ -82,7 +82,7 @@
     </p>
     <div class="video-section-1 center">
       <figure>
-        <video controls preload="metadata" src="assets/video/init-obsidian.mp4#t=0.001"></video>
+        <video controls muted preload="metadata" src="assets/video/init-obsidian.mp4#t=0.001"></video>
         <figcaption class="center">初始化 Obsidian 相关配置</figcaption>
       </figure>
     </div>
@@ -95,7 +95,7 @@
     </p>
     <div class="video-section-1 center">
       <figure>
-        <video controls preload="metadata" src="assets/video/init-end.mp4#t=0.001"></video>
+        <video controls muted preload="metadata" src="assets/video/init-end.mp4#t=0.001"></video>
         <figcaption class="center">初始化 Obsidian 相关配置</figcaption>
       </figure>
     </div>
@@ -115,11 +115,11 @@
     </p>
     <div class="video-section-2 center">
       <figure>
-        <video controls preload="metadata" src="assets/video/first-clip-obsidian.mp4#t=0.001"></video>
+        <video controls muted preload="metadata" src="assets/video/first-clip-obsidian.mp4#t=0.001"></video>
         <figcaption class="center">开始剪藏到 Obsidian</figcaption>
       </figure>
       <figure>
-        <video controls preload="metadata" src="assets/video/first-clip-obsidian-end.mp4#t=0.001"></video>
+        <video controls muted preload="metadata" src="assets/video/first-clip-obsidian-end.mp4#t=0.001"></video>
         <figcaption class="center">粘贴剪藏内容到 Obsidian</figcaption>
       </figure>
     </div>
@@ -132,7 +132,7 @@
     </p>
     <div class="video-section-1 center">
       <figure>
-        <video controls preload="metadata" src="assets/video/order.mp4#t=0.001"></video>
+        <video controls muted preload="metadata" src="assets/video/order.mp4#t=0.001"></video>
         <figcaption class="center">调整 <i>Web Clipper on Shortcut</i> 在分享面板中的位置</figcaption>
       </figure>
     </div>
@@ -144,18 +144,63 @@
       Bear
     </h4>
     <p>
-      如果你希望将网页内容剪藏到 Bear，配置更为简单。
+      如果你希望将网页内容剪藏到 Bear，配置更为简单。你只需要跟着初始化引导完成 <i>Web Clipper on Shortcut</i> 的基本配置即可，因为 Bear 不需要像 Obsidian 一样提供类似 Vault
+      的自定义配置。剪藏操作时也不需要手动执行粘贴操作。
     </p>
+    <div class="video-section-1 center">
+      <figure>
+        <video controls muted preload="metadata" src="assets/video/init-bear.mp4#t=0.001"></video>
+        <figcaption class="center">初始化 Bear 相关配置</figcaption>
+      </figure>
+    </div>
     <h4>
       Craft
     </h4>
+    <p>
+      如果你希望将网页内容剪藏到 Craft，那么首先需要确定希望将剪藏内容保存到哪个 Space，以及该 Space 的 SpaceId。如果你还希望能将剪藏内容保存到指定的文件夹中，那么你还需要提前获取该文件夹的
+      FolderId。你可以参考下面视频中的步骤获取 SpaceId 和 FolderId。如果你在 <i>Web Clipper on Shortcut</i> 的配置引导中选择了剪藏到
+      Craft，那么引导程序会在后续的步骤中让你输入 SpaceId 和 FolderId，这里 SpaceId 是必须的，而 FolderId 则可以根据你的个人需要留空。
+    </p>
+    <p>
+      配置完成后进行剪藏操作时，也和 Obsidian 一样需要你手动粘贴内容到自动创建的剪藏文件中，同样，因为粘贴内容是由 <i>Web Clipper on Shortcut</i>
+      提前准备好的，所以这个粘贴过程应该花不了你两秒钟时间。
+    </p>
     <h4>
       重置
     </h4>
+    <p>
+      <i>Web Clipper on Shortcut</i> 的所有配置信息都存储在你的 iCloud 云盘下的 Shortcuts 目录中，打开 Shortcuts 目录你会发现里面有一个 wcos 文件夹，其中存放了
+      <i>Web Clipper on Shortcut</i> 的所有 JavaScript 脚本和配置信息。如果你在之前的配置过程中失误进行了错误的配置，或者比如你之前选择的剪藏目标是 Obsidian，但现在你希望修改为
+      Bear，那么你可以简单的删除整个 wcos 文件夹，然后进入快捷指令 App 中重新运行 <i>Web Clipper on Shortcut</i>，你会发现 <i>Web Clipper on Shortcut</i>
+      会重新运行配置引导，你只用像之前那样进行新的配置就可以了。
+    </p>
+    <div class="video-section-1 center">
+      <figure>
+        <video controls muted preload="metadata" src="assets/video/reset.mp4#t=0.001"></video>
+        <figcaption class="center">重置配置</figcaption>
+      </figure>
+    </div>
     <h4>
       更新
     </h4>
-
+    <p>
+      如果你在配置引导中选择了「启用自动更新」，那么 <i>Web Clipper on Shortcut</i> 会在每个自然月的第一次运行时自动检查是否存在新的版本。如果存在它会提醒你，并引导你到本网站。你只需在快捷指令 App
+      中删除现在的 <i>Web Clipper on Shortcut</i>，然后在本网页中重新下载安装即可。
+    </p>
+    <p>
+      如果你没有启用自动更新，你也可以在任何时候进入快捷指令 App，点击运行 <i>Web Clipper on Shortcut</i> 来进行更新检查。<i>Web Clipper on Shortcut</i>
+      在发现自己不是通过 Safari 浏览器启动时就会自动进入更新检查程序。如果有新版本，你可以按照和上述相同的步骤进行更新。
+    </p>
+    <div class="video-section-2 center">
+      <figure>
+        <video controls muted preload="metadata" src="assets/video/auto-update.mp4#t=0.001"></video>
+        <figcaption class="center">自动更新</figcaption>
+      </figure>
+      <figure>
+        <video controls muted preload="metadata" src="assets/video/manual-update.mp4#t=0.001"></video>
+        <figcaption class="center">手动更新</figcaption>
+      </figure>
+    </div>
     <h2 id="header-how">原理</h2>
     <p>
       <i>Web Clipper on Shortcut</i> 的工作过程大致分为 5 个步骤：
@@ -185,7 +230,8 @@
     </h2>
     <p>
       如前所述，<i>Web Clipper on Shortcut</i> 在运行时会将一段 JavaScript 脚本注入网页中执行，这意味着网页的内容可以被这段 JavaScript
-      脚本完整访问。如果你剪藏的网页中正好存在某些敏感信息，而被注入的 JavaScript 脚本中又包含了某些恶意代码，那么这些敏感信息就会有被泄露的风险。事实上，所有的剪藏工具都会存在类似的风险。
+      脚本完整访问。所以每当你在一个新的网站上首次运行 <i>Web Clipper on Shortcut</i> 时，系统都会提醒你。如果你剪藏的网页中正好存在某些敏感信息，而被注入的 JavaScript
+      脚本中又包含了某些恶意代码，那么这些敏感信息就会有被泄露的风险。事实上，大部分剪藏工具都会存在类似的风险。
     </p>
     <p>
       为了避免出现这种问题，打消大家使用 <i>Web Clipper on Shortcut</i> 时对数据安全的疑虑，<i>Web Clipper on Shortcut</i> 的源代码是完全公开透明的，你可以在 <a
