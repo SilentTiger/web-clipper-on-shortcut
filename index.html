@@ -158,9 +158,25 @@
     </h4>
     <p>
       如果你希望将网页内容剪藏到 Craft，那么首先需要确定希望将剪藏内容保存到哪个 Space，以及该 Space 的 SpaceId。如果你还希望能将剪藏内容保存到指定的文件夹中，那么你还需要提前获取该文件夹的
-      FolderId。你可以参考下面视频中的步骤获取 SpaceId 和 FolderId。如果你在 <i>Web Clipper on Shortcut</i> 的配置引导中选择了剪藏到
-      Craft，那么引导程序会在后续的步骤中让你输入 SpaceId 和 FolderId，这里 SpaceId 是必须的，而 FolderId 则可以根据你的个人需要留空。
+      FolderId。一个简单的办法是在网页中打开你的 Space 或文件夹，这时浏览器地址栏中的 URL 中就包含了对应的 SpaceId 和 FolderId。URL 一般是下面这种形式：
     </p>
+    <p class="center">
+      <i>https://docs.craft.do/s/UserName's-Space--xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/f/FolderName--xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</i>
+    </p>
+    <p>
+      其中第一段 <i>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</i> 就是 SpaceId，第二段 <i>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</i> 就是
+      FolderId。
+    </p>
+    <p>
+      如果你在 <i>Web Clipper on Shortcut</i> 的配置引导中选择了剪藏到 Craft，那么引导程序会在后续的步骤中让你输入 SpaceId 和 FolderId，这里 SpaceId 是必须的，而
+      FolderId 则可以根据你的个人需要留空。
+    </p>
+    <div class="video-section-1 center">
+      <figure>
+        <video controls muted preload="metadata" src="assets/video/init-craft.mp4#t=0.001"></video>
+        <figcaption class="center">初始化 Craft 相关配置</figcaption>
+      </figure>
+    </div>
     <p>
       配置完成后进行剪藏操作时，也和 Obsidian 一样需要你手动粘贴内容到自动创建的剪藏文件中，同样，因为粘贴内容是由 <i>Web Clipper on Shortcut</i>
       提前准备好的，所以这个粘贴过程应该花不了你两秒钟时间。
