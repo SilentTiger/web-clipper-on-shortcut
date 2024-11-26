@@ -1,13 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="description" content="Web Clipper on Shortcut is a web clipping shortcut that helps you quickly clip the main content of a
+  webpage from browsers like Safari to various apps, including Obsidian, Bear and Craft.">
+  <meta name="keywords" content="web clipper,obsidian,bear,craft,markdown,note">
   <title>Web Clipper on Shortcut</title>
+  <link rel="stylesheet" href="assets/typo.css">
+  <link rel="stylesheet" href="assets/custom.css">
 </head>
-<body>
-  <p><a href="./index.html">Chinese Version</a></p>
-  <h1>Web Clipper on Shortcut</h1>
+
+<body class="typo">
+  <nav>
+    <a class="text-link" href="./index.html" alt="中文版">中文版</a>
+    <a class="icon-github darken-in-dark" href="https://github.com/SilentTiger/web-clipper-on-shortcut/"></a>
+  </nav>
+  <article>
+    <h1 id="header-desc">Web Clipper on Shortcut</h1>
+    <p>
+      <i>Web Clipper on Shortcut</i> is a web clipping shortcut that helps you quickly clip the main content of a
+      webpage from browsers like Safari to various apps.
+    </p>
+    <h2 id="header-demo">
+      Demo
+    </h2>
+    <p><i>Web Clipper on Shortcut</i> currently supports clipping webpage content to three apps: <i>Obsidian</i>,
+      <i>Craft</i>, and <i>Bear</i>:
+    </p>
+    <div class="clip-samples-mobile">
+      <figure>
+        <video controls preload="metadata" src="assets/video/clip-to-obsidian.mp4#t=0.001"></video>
+        <figcaption class="center">Clip to Obsidian</figcaption>
+      </figure>
+      <figure>
+        <video controls preload="metadata" src="assets/video/clip-to-craft.mp4#t=0.001"></video>
+        <figcaption class="center">Clip to Craft</figcaption>
+      </figure>
+      <figure>
+        <video controls preload="metadata" src="assets/video/clip-to-bear.mp4#t=0.001"></video>
+        <figcaption class="center">Clip to Bear</figcaption>
+      </figure>
+    </div>
+    <p>
+      <i>Web Clipper on Shortcut</i> can be used not only on iOS but also on macOS.
+    </p>
+    <div class="clip-samples-mac center">
+      <video controls preload="metadata" src="assets/video/clip-to-bear-mac.mp4#t=0.001"></video>
+      <figcaption class="center">Clip to Bear mac 端</figcaption>
+    </div>
+
+    <h2 id="header-tutorials">
+      Quick start
+    </h2>
+    <p class="center">
+      <a href="assets/Web Clipper on Shortcut.shortcut">
+        <img class="darken-in-dark" src="assets/main-icon.png" width="150" alt="Web Clipper on Shortcut icon">
+      </a>
+    </p>
+    <p>
+      First, click the icon above to download and import <i>Web Clipper on Shortcut</i> into your <i>Shortcuts</i> app.
+    </p>
+
+
+
+
+
+
+
+
+
+
+
+
+    <h2 id="header-how">Principle</h2>
+    <p>
+      The working process of <i>Web Clipper on Shortcut</i> can be roughly divided into 5 steps:
+    </p>
+    <ol>
+      <li>Retrieve the main content of the webpage, excluding unnecessary elements like the webpage frame, ads, etc.
+      </li>
+      <li>Filter out unsafe parts of the content, such as injected scripts.</li>
+      <li>Convert the main content from HTML format to Markdown format.</li>
+      <li>Copy the content in Markdown format to the clipboard, and open the specified app using URL Scheme to create a
+        file.</li>
+      <li>The user manually pastes the clipped content into the newly created file.</li>
+    </ol>
+    <p>The specific logic of the above steps is mostly implemented using JavaScript. During runtime, the <i>Web Clipper
+        on Shortcut</i> shortcut reads these JavaScript codes from the disk and injects them into the webpage for
+      execution.</p>
+    <p>其中前三步分别用 <i>mozilla/readability</i>、<i>cure53/DOMPurify</i> 和 <i>mixmark-io/turndown</i> 这三个开源 JavaScript 库来实现。
+    </p>
+
+    <h2 id="header-advance">
+      高级用法
+    </h2>
+
+    <h2 id="header-security">
+      安全与隐私
+    </h2>
+
+    <h2 id="header-feedback">
+      反馈与建议
+    </h2>
+
+    <h2 id="header-acknowledgments">
+      致谢
+    </h2>
+    <p>
+      感谢下面这些项目为 <i>Web Clipper on Shortcut</i> 提供的各种支持。
+    </p>
+    <dl>
+      <dt>
+        <cite><a class="text-link" target="mozilla/readability"
+            href="https://github.com/mozilla/readability">mozilla/readability</a></cite>
+      </dt>
+      <dd>
+        <i>mozilla/readability</i> 被用于抽取网页正文内容，它也是 <i>Firefox Reader View</i> 的基础库。
+      </dd>
+    </dl>
+    <dl>
+      <dt>
+        <cite><a class="text-link" target="cure53/DOMPurify"
+            href="https://github.com/cure53/DOMPurify">cure53/DOMPurify</a></cite>
+      </dt>
+      <dd>
+        <i>cure53/DOMPurify</i> 被用于过滤掉正文内容中不安全的部分。
+      </dd>
+    </dl>
+    <dl>
+      <dt>
+        <cite><a class="text-link" target="mixmark-io/turndown"
+            href="https://github.com/mixmark-io/turndown">mixmark-io/turndown</a></cite>
+      </dt>
+      <dd>
+        <i>mixmark-io/turndown</i> 被用于将正文内容由 html 格式转换为 Markdown 格式。
+      </dd>
+    </dl>
+    <dl>
+      <dt>
+        <cite><a class="text-link" target="sofish/typo.css"
+            href="https://github.com/sofish/typo.css">sofish/typo.css</a></cite>
+      </dt>
+      <dd>
+        <i>sofish/typo.css</i> 被用于本网页的内容排版和美化。
+      </dd>
+    </dl>
+  </article>
+  <aside>
+    <ol>
+      <li><a href="#header-desc">Summary</a></li>
+      <li><a href="#header-demo">Demo</a></li>
+      <li><a href="#header-tutorials">Quick start</a></li>
+      <li><a href="#header-how">Principle</a></li>
+      <li><a href="#header-advance">高级用法</a></li>
+      <li><a href="#header-security">安全与隐私</a></li>
+      <li><a href="#header-feedback">反馈与建议</a></li>
+      <li><a href="#header-acknowledgments">致谢</a></li>
+    </ol>
+  </aside>
+  <script src="assets/index.js"></script>
 </body>
+
 </html>
