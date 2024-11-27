@@ -33,7 +33,7 @@
     <p><i>Web Clipper on Shortcut</i> currently supports clipping webpage content to three apps: <i>Obsidian</i>,
       <i>Craft</i>, and <i>Bear</i>:
     </p>
-    <div class="clip-samples-mobile">
+    <div class="video-section-3 center">
       <figure>
         <video controls preload="metadata" src="assets/video/clip-to-obsidian.mp4#t=0.001"></video>
         <figcaption class="center">Clip to Obsidian</figcaption>
@@ -68,8 +68,10 @@
     </p>
     <p>
       First, click the icon above in the Safari browser to download and import <i>Web Clipper on Shortcut</i> into your
-      Shortcuts app. Then, simply run <i>Web Clipper on Shortcut</i> directly from the Shortcuts app. If this is your first
-      time using it, <i>Web Clipper on Shortcut</i> will immediately initiate the setup process, asking which app you want to
+      Shortcuts app. Then, simply run <i>Web Clipper on Shortcut</i> directly from the Shortcuts app. If this is your
+      first
+      time using it, <i>Web Clipper on Shortcut</i> will immediately initiate the setup process, asking which app you
+      want to
       clip content to and whether to enable automatic updates (enabling updates is recommended).
     </p>
     <div class="video-section-2 center">
@@ -86,12 +88,15 @@
       Configuration
     </h4>
     <p>
-      Next, <i>Web Clipper on Shortcut</i> will guide you through an app-specific setup process based on your selected app. For
-      example, if you choose Obsidian, <i>Web Clipper on Shortcut</i> will ask you to specify which Vault to save the clipped
+      Next, <i>Web Clipper on Shortcut</i> will guide you through an app-specific setup process based on your selected
+      app. For
+      example, if you choose Obsidian, <i>Web Clipper on Shortcut</i> will ask you to specify which Vault to save the
+      clipped
       content in and the specific path within that Vault.
 
       Let’s assume the Vault is “Personal” and the path is “SimpleRead.” When you clip an article titled “hello
-      clipper,” <i>Web Clipper on Shortcut</i> will create a file titled “hello clipper” in the “SimpleRead” directory of the
+      clipper,” <i>Web Clipper on Shortcut</i> will create a file titled “hello clipper” in the “SimpleRead” directory
+      of the
       “Personal” Vault.
     </p>
     <div class="video-section-1 center">
@@ -104,7 +109,8 @@
       Authorization
     </h4>
     <p>
-      Finally, <i>Web Clipper on Shortcut</i> will attempt to download a JavaScript script for clipping from this website and
+      Finally, <i>Web Clipper on Shortcut</i> will attempt to download a JavaScript script for clipping from this
+      website and
       request permission to write data to the clipboard. Simply allow all these permissions. For more details about the
       JavaScript script and clipboard permissions, refer to the subsequent sections.
     </p>
@@ -146,90 +152,105 @@
       </figure>
     </div>
     <h4>
-      优化
+      Optimization
     </h4>
     <p>
-      <i>Web Clipper on Shortcut</i> 刚安装好的时候默认是在 Safari 浏览器分享面板的最下面的，为了让我们使用 <i>Web Clipper on Shortcut</i>
-      更方便，我们还可以调整它在分享面板中的位置。
+      When <i>Web Clipper on Shortcut</i> is first installed, it is located at the bottom of the Safari browser's share
+      sheet by default. To make it more convenient for us to use <i>Web Clipper on Shortcut</i>, we can also adjust its
+      position in the share sheet.
     </p>
     <div class="video-section-1 center">
       <figure>
         <video controls muted preload="metadata" src="assets/video/order.mp4#t=0.001"></video>
-        <figcaption class="center">调整 <i>Web Clipper on Shortcut</i> 在分享面板中的位置</figcaption>
+        <figcaption class="center">Change the position of <i>Web Clipper on Shortcut</i> in share panel</figcaption>
       </figure>
     </div>
 
     <h2 id="header-advance">
-      更多用法
+      Additional Usage
     </h2>
     <h4>
       Bear
     </h4>
     <p>
-      如果你希望将网页内容剪藏到 Bear，配置更为简单。你只需要跟着初始化引导完成 <i>Web Clipper on Shortcut</i> 的基本配置即可，因为 Bear 不需要像 Obsidian 一样提供类似 Vault
-      的自定义配置。剪藏操作时也不需要手动执行粘贴操作。
+      If you wish to clip web content to Bear, the configuration is simpler. You only need to follow the initialization
+      guide to complete the basic configuration of <i>Web Clipper on Shortcut</i>, as Bear does not require custom
+      configurations like Vault in Obsidian. During the clipping operation, there is no need to manually perform the
+      paste operation.
     </p>
     <div class="video-section-1 center">
       <figure>
         <video controls muted preload="metadata" src="assets/video/init-bear.mp4#t=0.001"></video>
-        <figcaption class="center">初始化 Bear 相关配置</figcaption>
+        <figcaption class="center">Init config for Bear</figcaption>
       </figure>
     </div>
     <h4>
       Craft
     </h4>
     <p>
-      如果你希望将网页内容剪藏到 Craft，那么首先需要确定希望将剪藏内容保存到哪个 Space，以及该 Space 的 SpaceId。如果你还希望能将剪藏内容保存到指定的文件夹中，那么你还需要提前获取该文件夹的
-      FolderId。一个简单的办法是在网页中打开你的 Space 或文件夹，这时浏览器地址栏中的 URL 中就包含了对应的 SpaceId 和 FolderId。URL 一般是下面这种形式：
+      If you wish to clip web content to Craft, you first need to determine which Space you want to save the clipped
+      content to, as well as the SpaceId of that Space. If you also want to save the clipped content to a specific
+      folder, you need to obtain the FolderId of that folder in advance. A simple way to do this is to open your Space
+      or folder in the web browser, where the URL in the address bar will contain the corresponding SpaceId and
+      FolderId. The URL is generally in the following format:
     </p>
     <p class="center">
       <i>https://docs.craft.do/s/UserName's-Space--xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/f/FolderName--xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</i>
     </p>
     <p>
-      其中第一段 <i>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</i> 就是 SpaceId，第二段 <i>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</i> 就是
-      FolderId。
+      The first segment <i>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</i> is SpaceId，and the second
+      <i>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</i> is FolderId。
     </p>
     <p>
-      如果你在 <i>Web Clipper on Shortcut</i> 的配置引导中选择了剪藏到 Craft，那么引导程序会在后续的步骤中让你输入 SpaceId 和 FolderId，这里 SpaceId 是必须的，而
-      FolderId 则可以根据你的个人需要留空。
+      If you choose to clip to Craft during the configuration guide of <i>Web Clipper on Shortcut</i>, the guide will
+      prompt you to enter the SpaceId and FolderId in subsequent steps. The SpaceId is mandatory, while the FolderId can
+      be left blank according to your personal needs.
     </p>
     <div class="video-section-1 center">
       <figure>
         <video controls muted preload="metadata" src="assets/video/init-craft.mp4#t=0.001"></video>
-        <figcaption class="center">初始化 Craft 相关配置</figcaption>
+        <figcaption class="center">Init config for Craft</figcaption>
       </figure>
     </div>
     <p>
-      配置完成后进行剪藏操作时，也和 Obsidian 一样需要你手动粘贴内容到自动创建的剪藏文件中，同样，因为粘贴内容是由 <i>Web Clipper on Shortcut</i>
-      提前准备好的，所以这个粘贴过程应该花不了你两秒钟时间。
+      After completing the configuration, when performing the clipping operation, it is also necessary to manually paste
+      the content into the automatically created clipping file, just like with Obsidian. However, since the content to
+      be pasted is prepared in advance by <i>Web Clipper on Shortcut</i>, this pasting process should take no more than
+      two seconds.
     </p>
     <h4>
-      重置
+      Reset
     </h4>
     <p>
-      <i>Web Clipper on Shortcut</i> 的所有配置信息都存储在你的 iCloud 云盘下的 Shortcuts 目录中，打开 Shortcuts 目录你会发现里面有一个 wcos 文件夹，其中存放了
-      <i>Web Clipper on Shortcut</i> 的所有 JavaScript 脚本和配置信息。如果你在之前的配置过程中失误进行了错误的配置，或者比如你之前选择的剪藏目标是 Obsidian，但现在你希望修改为
-      Bear，那么你可以简单的删除整个 wcos 文件夹，然后进入快捷指令 App 中重新运行 <i>Web Clipper on Shortcut</i>，你会发现 <i>Web Clipper on Shortcut</i>
-      会重新运行配置引导，你只用像之前那样进行新的配置就可以了。
+      All configuration information for <i>Web Clipper on Shortcut</i> is stored in the Shortcuts directory under your
+      iCloud Drive. Opening the Shortcuts directory, you will find a folder named wcos, which contains all the
+      JavaScript scripts and configuration information for <i>Web Clipper on Shortcut</i>. If you made a mistake during
+      the previous configuration process or, for example, if you previously chose Obsidian as the clipping target but
+      now wish to change it to Bear, you can simply delete the entire wcos folder and then rerun <i>Web Clipper on
+        Shortcut</i> in the Shortcuts app. You will find that <i>Web Clipper on Shortcut</i> will rerun the
+      configuration guide, and you can simply follow the new configuration process as before.
     </p>
     <div class="video-section-1 center">
       <figure>
         <video controls muted preload="metadata" src="assets/video/reset.mp4#t=0.001"></video>
-        <figcaption class="center">重置配置</figcaption>
+        <figcaption class="center">Reset config</figcaption>
       </figure>
     </div>
     <h4>
       Update
     </h4>
     <p>
-      If you selected “Enable Automatic Updates” during the setup, <i>Web Clipper on Shortcut</i> will automatically check for
+      If you selected “Enable Automatic Updates” during the setup, <i>Web Clipper on Shortcut</i> will automatically
+      check for
       new versions the first time it runs each calendar month. If an update is available, it will notify you and guide
-      you to this website. To update, simply delete the current <i>Web Clipper on Shortcut</i> from the Shortcuts app and
+      you to this website. To update, simply delete the current <i>Web Clipper on Shortcut</i> from the Shortcuts app
+      and
       download and install the latest version from this webpage.
     </p>
     <p>
       If you didn’t enable automatic updates, you can manually check for updates at any time by opening the Shortcuts
-      app and running <i>Web Clipper on Shortcut</i>. When <i>Web Clipper on Shortcut</i> detects that it wasn’t launched through the
+      app and running <i>Web Clipper on Shortcut</i>. When <i>Web Clipper on Shortcut</i> detects that it wasn’t
+      launched through the
       Safari browser, it will automatically enter the update check process. If a new version is available, you can
       update it by following the same steps mentioned above.
     </p>
@@ -245,33 +266,44 @@
     </div>
     <h2 id="header-how">Principle</h2>
     <p>
-      <i>Web Clipper on Shortcut</i> 的工作过程大致分为 5 个步骤：
+      The workflow of <i>Web Clipper on Shortcut</i> generally consists of 5 steps:
     </p>
     <ol>
-      <li>获取网页正文内容，排除网页框架、广告等不必要的内容。</li>
-      <li>过滤掉正文内容中不安全的部分，比如注入脚本等。</li>
-      <li>将正文内容由 html 格式转换为 Markdown 格式。</li>
-      <li>将文件内容以 Markdown 格式复制到剪贴板，同时通过 URL Scheme 打开指定 App 并创建文件。</li>
-      <li>用户手动粘贴剪藏内容到新创建的文件里。</li>
+      <li>Obtain the main content of the web page, excluding unnecessary elements such as web frameworks and
+        advertisements.</li>
+      <li>Filter out unsafe parts of the main content, such as injected scripts.</li>
+      <li>Convert the main content from HTML to Markdown.</li>
+      <li>Copy the content to the clipboard, and simultaneously open the specified app and
+        create a file via URL Scheme.</li>
+      <li>The user manually pastes the clipped content into the newly created file.</li>
     </ol>
-    <p>上述步骤的具体逻辑大多是通过 JavaScript 实现的，<i>Web Clipper on Shortcut</i> 快捷指令在运行时会将这些 JavaScript 代码从磁盘读取出来，并注入到网页中运行。</p>
-    <p>其中前三步分别用 <i>mozilla/readability</i>、<i>cure53/DOMPurify</i> 和 <i>mixmark-io/turndown</i> 这三个开源 JavaScript 库来实现。
+    <p>The logic of the above steps is mostly implemented through JavaScript. The <i>Web Clipper
+        on Shortcut</i> shortcut instruction reads these JavaScript codes from the disk and injects them into the web
+      page to execute.</p>
+    <p>The first three steps are implemented using these three open-source JavaScript libraries:
+      <i>mozilla/readability</i>, <i>cure53/DOMPurify</i> and <i>mixmark-io/turndown</i>.
     </p>
-    <p>另外，你可能已经发现，<i>Web Clipper on Shortcut</i> 在剪藏网页内容到 Obsidian 和 Craft 时，需要你手动粘贴内容到新创建的文件里。这是因为这两款 App 不支持根据 URL
-      Scheme 配置自动读取剪贴板内容，虽然可以通过 URL Scheme 直接传递内容到 App 中，但因为 URL Scheme 的长度有限制，会导致部分剪藏内容丢失，所以 <i>Web Clipper on
-        Shortcut</i> 在设计时就选择了让用户使用时手动粘贴的方案。不过，如前所示，这里剪贴板中的内容是经过 <i>Web Clipper on Shortcut</i>
-      清洗并进行过格式转换的，所以粘贴之后用户不需要再进一步处理。
+    <p>Additionally, you may have noticed that <i>Web Clipper on Shortcut</i> requires you to manually paste the content
+      into the newly created file when clipping web content to Obsidian and Craft. This is because these two apps do not
+      support automatically reading clipboard content based on URL Scheme configuration. Although content can be
+      directly passed to the app via URL Scheme, the length of the URL Scheme is limited, which can result in the loss
+      of some clipped content. Therefore, <i>Web Clipper on Shortcut</i> was designed to require manual pasting by the
+      user. However, as previously shown, the content in the clipboard has been cleaned and formatted by <i>Web Clipper
+        on Shortcut</i>, so users do not need to further process it after pasting.
     </p>
     <p>
-      如果你用 <i>Web Clipper on Shortcut</i> 剪藏一个包含较多图片的网页到 Bear App，你可能会发现剪藏过程会在 Bear App 的界面卡顿一段时间，这是因为 Bear App
-      会自动下载网页中的图片资源需要一些时间，具体时间长短取决于你的网络情况。
+      If you use <i>Web Clipper on Shortcut</i> to clip a web page containing a large number of images to Bear App, you
+      may notice that the clipping process causes the Bear App interface to freeze for a while. This is because Bear App
+      automatically downloads the image resources from the web page, which takes some time, depending on your network
+      conditions.
     </p>
 
     <h2 id="header-security">
       Security and Privacy
     </h2>
     <p>
-      As mentioned earlier, <i>Web Clipper on Shortcut</i> injects a JavaScript script into the webpage for execution during
+      As mentioned earlier, <i>Web Clipper on Shortcut</i> injects a JavaScript script into the webpage for execution
+      during
       its runtime. This means that the JavaScript script has full access to the content of the webpage. Therefore, the
       system will notify you the first time you run <i>Web Clipper on Shortcut</i> on a new website.
 
@@ -280,48 +312,53 @@
       exist with most web clipping tools.
     </p>
     <p>
-      为了避免出现这种问题，打消大家使用 <i>Web Clipper on Shortcut</i> 时对数据安全的疑虑，<i>Web Clipper on Shortcut</i> 的源代码是完全公开透明的，你可以在 <a
+      To avoid such issues and to alleviate concerns about data security when using <i>Web Clipper on Shortcut</i>, the
+      <i>Web Clipper on Shortcut</i> is completely an open-source project. You can have the source code at <a
         class="text-link" href="https://github.com/SilentTiger/web-clipper-on-shortcut"
-        target="_blank">SilentTiger/web-clipper-on-shortcut</a> 查看 <i>Web Clipper on Shortcut</i>
-      的所有源码，你也完全可以下载源码然后自行编译使用。
+        target="_blank">SilentTiger/web-clipper-on-shortcut</a>.
     </p>
     <p>
-      At the same time, <i>Web Clipper on Shortcut</i> performs an MD5 checksum on the JavaScript script before injecting it
+      At the same time, <i>Web Clipper on Shortcut</i> performs an MD5 checksum on the JavaScript script before
+      injecting it
       into a webpage to ensure that the script has not been tampered with, reducing data security risks. The
       verification criteria are stored in the shortcut’s source file, so you should not easily trust Web Clipper on
       Shortcut shortcut files sent by others. They might modify the MD5 criteria to introduce potentially unsafe
       JavaScript scripts.
     </p>
     <p>
-      <i>Web Clipper on Shortcut</i> 在运行过程本身是不依赖网络的，也不会发送任何数据到第三方服务器。
+      <i>Web Clipper on Shortcut</i> does not rely on the network during its operation and does not send any data to
+      third-party servers.
     </p>
     <h2 id="header-feedback">
       Feedback
     </h2>
     <p>
-      如果你在使用 <i>Web Clipper on Shortcut</i> 时遇到任何问题，你可以在 <a class="text-link"
+      If you have any problem when using <i>Web Clipper on Shortcut</i>, you can fire an issue at <a class="text-link"
         href="https://github.com/SilentTiger/web-clipper-on-shortcut"
-        target="_blank">SilentTiger/web-clipper-on-shortcut</a>
-      上提出反馈。
+        target="_blank">SilentTiger/web-clipper-on-shortcut</a>.
     </p>
     <p>
-      <i>Web Clipper on Shortcut</i> currently supports only a limited number of apps. If you’d like it to support additional
+      <i>Web Clipper on Shortcut</i> currently supports only a limited number of apps. If you’d like it to support
+      additional
       apps and the app you want can be launched via URL Scheme, you can submit an issue through the earlier link. I’ll
       address it as soon as I have time.
     </p>
     <p>
-      当然，如果你恰好还懂一点点 JavaScript，那你完全可以给你希望支持的 App 写一个 launcher，然后给 <i>Web Clipper on Shortcut</i> 提交 Pull
-      Request。launcher 的具体实现可以参考项目中 src/launcher 目录下的写法。
+      Of course, if you happen to have a basic understanding of JavaScript, you can write a launcher for the app you
+      wish to support and submit a Pull Request to <i>Web Clipper on Shortcut</i>. The specific implementation of the
+      launcher can be referred to in the src/launcher directory of the project.
     </p>
     <p>
-      另外，<i>Web Clipper on Shortcut</i> 目前也只针对个别网站做了优化，如果你发现它在剪藏某些网站时效果不理想，比如广告没有去除干净，你也可以提 issue，当然如果你能针对性的实现一个 plugin
-      然后提 pull request 就更好啦，plugin 的实现可以参考项目中 src/plugin 目录下的写法。
+      Additionally, <i>Web Clipper on Shortcut</i> has only been optimized for a few specific websites. If you find that
+      it does not perform well when clipping certain websites, such as not removing ads completely, you can raise an
+      issue. Of course, it would be even better if you could implement a specific plugin and submit a pull request. The
+      implementation of the plugin can be referred to in the src/plugin directory of the project.
     </p>
     <h2 id="header-acknowledgments">
-      致谢
+      Thanks and Acknowledgments
     </h2>
     <p>
-      感谢下面这些项目为 <i>Web Clipper on Shortcut</i> 提供的各种支持。
+      Thanks to the following projects for providing various supports to <i>Web Clipper on Shortcut</i>.
     </p>
     <dl>
       <dt>
@@ -329,7 +366,8 @@
             href="https://github.com/mozilla/readability">mozilla/readability</a></cite>
       </dt>
       <dd>
-        <i>mozilla/readability</i> 被用于抽取网页正文内容，它也是 <i>Firefox Reader View</i> 的基础库。
+        <i>mozilla/readability</i> is used to extract the main content of web pages and is also the foundational library
+        for <i>Firefox Reader View</i>.
       </dd>
     </dl>
     <dl>
@@ -338,7 +376,7 @@
             href="https://github.com/cure53/DOMPurify">cure53/DOMPurify</a></cite>
       </dt>
       <dd>
-        <i>cure53/DOMPurify</i> 被用于过滤掉正文内容中不安全的部分。
+        <i>cure53/DOMPurify</i> is used to filter out unsafe parts of the main content.
       </dd>
     </dl>
     <dl>
@@ -347,7 +385,7 @@
             href="https://github.com/mixmark-io/turndown">mixmark-io/turndown</a></cite>
       </dt>
       <dd>
-        <i>mixmark-io/turndown</i> 被用于将正文内容由 html 格式转换为 Markdown 格式。
+        <i>mixmark-io/turndown</i> is used to convert the main content from HTML to Markdown.
       </dd>
     </dl>
     <dl>
@@ -356,7 +394,7 @@
             href="https://github.com/sofish/typo.css">sofish/typo.css</a></cite>
       </dt>
       <dd>
-        <i>sofish/typo.css</i> 被用于本网页的内容排版和美化。
+        <i>sofish/typo.css</i> is used for the content layout and beautification of this webpage.
       </dd>
     </dl>
   </article>
@@ -365,11 +403,11 @@
       <li><a href="#header-desc">Summary</a></li>
       <li><a href="#header-demo">Demo</a></li>
       <li><a href="#header-tutorials">Quick start</a></li>
-      <li><a href="#header-advance">更多用法</a></li>
+      <li><a href="#header-advance">Additional</a></li>
       <li><a href="#header-how">Principle</a></li>
-      <li><a href="#header-security">Security and Privacy</a></li>
+      <li><a href="#header-security">Privacy</a></li>
       <li><a href="#header-feedback">Feedback</a></li>
-      <li><a href="#header-acknowledgments">致谢</a></li>
+      <li><a href="#header-acknowledgments">Acknowledgments</a></li>
     </ol>
   </aside>
   <script src="assets/index.js"></script>
