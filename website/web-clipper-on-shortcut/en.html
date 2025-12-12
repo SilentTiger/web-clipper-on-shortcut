@@ -14,9 +14,9 @@
   <title>Web Clipper on Shortcut – Safari Web Clipper iOS Shortcut for Obsidian, Craft & Bear</title>
   <link rel="stylesheet" href="assets/typo.css">
   <link rel="stylesheet" href="assets/custom.css">
-  <link rel="canonical" href="https://silenttiger.online/web-clipper-on-shortcut/en" />
+  <link rel="canonical" href="https://silenttiger.online/web-clipper-on-shortcut/en.html" />
   <link rel="alternate" href="https://silenttiger.online/web-clipper-on-shortcut/" hreflang="zh-Hans" />
-  <link rel="alternate" href="https://silenttiger.online/web-clipper-on-shortcut/en" hreflang="en" />
+  <link rel="alternate" href="https://silenttiger.online/web-clipper-on-shortcut/en.html" hreflang="en" />
   <link rel="alternate" href="https://silenttiger.online/web-clipper-on-shortcut/" hreflang="x-default" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JQEGNQ012T"></script>
@@ -27,12 +27,67 @@
 
     gtag('config', 'G-JQEGNQ012T');
   </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which apps does Web Clipper on Shortcut support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Web Clipper on Shortcut currently supports clipping web page content to Obsidian, Craft, and Bear. Obsidian and Craft use a clipboard-based flow, while Bear can receive the clipped content directly via its URL scheme."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work on both iOS and macOS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. As long as the Shortcuts app is available on your device, you can run Web Clipper on Shortcut from Safari’s share sheet on both iOS and macOS. The basic flow is the same on both platforms: run the Shortcut from the share sheet, extract the main content, convert it to Markdown, and send it to the configured app."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it send my data to external servers? Is it safe for sensitive pages?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "During normal use, Web Clipper on Shortcut does not send page content or your configuration to external servers. The JavaScript that extracts the content runs locally on your device. If you are clipping very sensitive pages, you should still decide whether you are comfortable running any injected script on that page and can review the Security and Privacy section for more details."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do I need to paste manually in Obsidian and Craft, but not in Bear?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For Obsidian and Craft, the Shortcut prepares cleaned Markdown and copies it to the clipboard, then opens a new note or document via URL scheme. These apps do not currently provide a reliable way to pass full page content directly, so you complete the last step by pasting. For Bear, its URL scheme allows the Shortcut to send the full content directly, so no manual paste is needed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I reset the configuration or switch the target app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "All configuration is stored under your Shortcuts directory in iCloud Drive, in a folder named wcos. If you misconfigured something or want to switch to a different app, open iCloud Drive, delete the wcos folder, and then run Web Clipper on Shortcut again from the Shortcuts app to go through the setup guide."
+          }
+        }
+      ]
+    }
+  </script>
+  <meta property="og:type" content="website">
+  <meta property="og:title"
+    content="Web Clipper on Shortcut – Safari Web Clipper iOS Shortcut for Obsidian, Craft & Bear">
+  <meta property="og:description"
+    content="Save clean web pages from Safari to Obsidian, Craft, and Bear as Markdown using a single iOS & macOS Shortcut. Open-source and privacy-friendly.">
+  <meta property="og:url" content="https://silenttiger.online/web-clipper-on-shortcut/en.html">
 </head>
 
 <body class="typo">
   <nav>
-    <a class="text-link" href="./index.html" alt="中文版">中文版</a>
-    <a class="icon-github darken-in-dark" href="https://github.com/SilentTiger/web-clipper-on-shortcut/"></a>
+    <a class="text-link" href="./index.html" title="中文版">中文版</a>
+    <a class="icon-github darken-in-dark" title="GitHub repository"
+      href="https://github.com/SilentTiger/web-clipper-on-shortcut/"></a>
   </nav>
   <article>
     <h1 id="header-desc">Web Clipper on Shortcut: Safari Web Clipper Shortcut for Obsidian, Craft & Bear</h1>
@@ -79,7 +134,8 @@
     </h4>
     <p class="center">
       <a href="assets/Web Clipper on Shortcut.shortcut">
-        <img class="darken-in-dark" src="assets/main-icon.png" width="150" alt="Run Web Clipper on Shortcut from Safari Share Sheet to save a page to Obsidian, Craft, and Bear">
+        <img class="darken-in-dark" src="assets/main-icon.png" width="150"
+          alt="Run Web Clipper on Shortcut from Safari Share Sheet to save a page to Obsidian, Craft, and Bear">
       </a>
     </p>
     <p>
@@ -283,39 +339,31 @@
         <figcaption class="center">Manual update</figcaption>
       </figure>
     </div>
-    <h2 id="header-how">Principle</h2>
+    <h2 id="header-how">How Web Clipper on Shortcut works</h2>
     <p>
-      The workflow of <i>Web Clipper on Shortcut</i> generally consists of 5 steps:
+      <i>Web Clipper on Shortcut</i> runs entirely via Apple Shortcuts and JavaScript. It doesn’t rely on any external
+      servers, so all processing happens on your device.
     </p>
-    <ol>
-      <li>Obtain the main content of the web page, excluding unnecessary elements such as web frameworks and
-        advertisements.</li>
-      <li>Filter out unsafe parts of the main content, such as injected scripts.</li>
-      <li>Convert the main content from HTML to Markdown.</li>
-      <li>Copy the content to the clipboard, and simultaneously open the specified app and
-        create a file via URL Scheme.</li>
-      <li>The user manually pastes the clipped content into the newly created file.</li>
-    </ol>
-    <p>The logic of the above steps is mostly implemented through JavaScript. The <i>Web Clipper
-        on Shortcut</i> shortcut instruction reads these JavaScript codes from the disk and injects them into the web
-      page to execute.</p>
-    <p>The first three steps are implemented using these three open-source JavaScript libraries:
-      <i>mozilla/readability</i>, <i>cure53/DOMPurify</i> and <i>mixmark-io/turndown</i>.
-    </p>
-    <p>Additionally, you may have noticed that <i>Web Clipper on Shortcut</i> requires you to manually paste the content
-      into the newly created file when clipping web content to Obsidian and Craft. This is because these two apps do not
-      support automatically reading clipboard content based on URL Scheme configuration. Although content can be
-      directly passed to the app via URL Scheme, the length of the URL Scheme is limited, which can result in the loss
-      of some clipped content. Therefore, <i>Web Clipper on Shortcut</i> was designed to require manual pasting by the
-      user. However, as previously shown, the content in the clipboard has been cleaned and formatted by <i>Web Clipper
-        on Shortcut</i>, so users do not need to further process it after pasting.
-    </p>
-    <p>
-      If you use <i>Web Clipper on Shortcut</i> to clip a web page containing a large number of images to Bear App, you
-      may notice that the clipping process causes the Bear App interface to freeze for a while. This is because Bear App
-      automatically downloads the image resources from the web page, which takes some time, depending on your network
-      conditions.
-    </p>
+    <ul>
+      <li>
+        <p>Run from Safari’s Share Sheet</p>
+        <p>You start the Shortcut from Safari’s Share Sheet (iOS and macOS). The current page URL gets passed into the
+          Shortcut.</p>
+      </li>
+      <li>
+        <p>Extract the main content with JavaScript</p>
+        <p>The Shortcut loads a small JavaScript file that parses the page and extracts the main article content,
+          removes navigation and ads, and converts it into Markdown.</p>
+      </li>
+      <li>
+        <p>Send the Markdown to your note app</p>
+        <p>For Bear, the Shortcut saves the Markdown directly into a new note;</p>
+        <p>For Obsidian and Craft, the Markdown is copied to your clipboard and you paste it into the target file or
+          block.</p>
+      </li>
+    </ul>
+    <p>All code runs locally on your device. You can review the exact JavaScript and Shortcut logic in the open-source
+      repository.</p>
 
     <h2 id="header-security">
       Security and Privacy
@@ -348,6 +396,61 @@
       <i>Web Clipper on Shortcut</i> does not rely on the network during its operation and does not send any data to
       third-party servers.
     </p>
+
+    <h2 id="header-faq">FAQ</h2>
+    <ul>
+      <li>
+        <p>Which apps does <i>Web Clipper on Shortcut</i> support?</p>
+        <p><i>Web Clipper on Shortcut</i> currently supports clipping web page content to <i>Obsidian</i>, <i>Craft</i>,
+          and
+          <i>Bear</i>.
+          Obsidian and Craft use a clipboard-based flow, while Bear can receive the clipped content directly via its URL
+          scheme.
+        </p>
+      </li>
+      <li>
+        <p>Does it work on both iOS and macOS?</p>
+        <p>Yes. As long as the <i>Shortcuts</i> app is available on your device, you can run <i>Web Clipper on
+            Shortcut</i>
+          from
+          Safari’s share sheet on both <i>iOS</i> and <i>macOS</i>.
+          The basic flow is the same: run the Shortcut from the share sheet, extract the main content, convert it to
+          Markdown, and send it to the configured app.</p>
+      </li>
+      <li>
+        <p>Does it send my data to external servers? Is it safe for sensitive pages?</p>
+        <p>During normal use, <i>Web Clipper on Shortcut</i> does <i>not</i> send page content or your configuration to
+          any
+          external
+          servers.
+          The JavaScript that extracts the content runs locally on your device. If you are clipping very sensitive
+          pages,
+          you should still decide whether you are comfortable running any injected script on that page. For more
+          details,
+          see the <i>Security and Privacy</i> section above.</p>
+      </li>
+      <li>
+        <p>Why do I need to paste manually in Obsidian and Craft, but not in Bear?</p>
+        <p>For <i>Obsidian</i> and <i>Craft</i>, the Shortcut prepares cleaned Markdown and copies it to the clipboard,
+          then
+          opens a new note or document via URL scheme. These apps do not currently provide a reliable way to pass full
+          page content directly, so you complete the last step by pasting.
+          For <i>Bear</i>, its URL scheme allows the Shortcut to send the full content directly, so no manual paste is
+          needed.</p>
+      </li>
+      <li>
+        <p>How do I reset the configuration or switch the target app?</p>
+        <p>All configuration is stored under your <i>Shortcuts</i> directory in <i>iCloud Drive</i>, in a folder named
+          <code>wcos</code>.
+          If you misconfigured something or want to switch to a different app:</p>
+        <ol>
+          <li>Open iCloud Drive → <code>Shortcuts</code> directory.</li>
+          <li>Delete the <code>wcos</code> folder.</li>
+          <li>Run <i>Web Clipper on Shortcut</i> again from the Shortcuts app and follow the setup guide.</li>
+        </ol>
+      </li>
+    </ul>
+
     <h2 id="header-feedback">
       Feedback
     </h2>
@@ -423,8 +526,9 @@
       <li><a href="#header-demo">Demo</a></li>
       <li><a href="#header-tutorials">Quick start</a></li>
       <li><a href="#header-advance">Additional</a></li>
-      <li><a href="#header-how">Principle</a></li>
+      <li><a href="#header-how">How to</a></li>
       <li><a href="#header-security">Privacy</a></li>
+      <li><a href="#header-faq">FAQ</a></li>
       <li><a href="#header-feedback">Feedback</a></li>
       <li><a href="#header-acknowledgments">Acknowledgments</a></li>
     </ol>
@@ -443,7 +547,7 @@
         "price": "0",
         "priceCurrency": "USD"
       },
-      "url": "https://silenttiger.online/web-clipper-on-shortcut/en",
+      "url": "https://silenttiger.online/web-clipper-on-shortcut/en.html",
       "softwareVersion": "1.0.0"
     }
 </script>
